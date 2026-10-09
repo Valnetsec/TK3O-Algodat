@@ -1,5 +1,6 @@
 class Node{
     String nama;
+    int hp;
     int level;
     Node next;
     Node prev;
