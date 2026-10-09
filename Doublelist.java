@@ -1,30 +1,18 @@
-class Node{
-    String nama;
-    int hp;
-    int level;
-    Node next;
-    Node prev;
 
-    Node(String nama, int hp, int level){
-        this.nama = nama;
-        this.hp = hp;
-        this.level = level;
-        this.next = null;
-        this.prev = null;
-    }
-}
+public class Doublelist {
+    NodeDouble head;
+    NodeDouble tail;
 
-class DoubleList{
-    Node head;
-    Node tail;
-
-    DoubleList(){
+    // Membuat list kosong
+    public Doublelist() {
         head = null;
         tail = null;
     }
 
-    void tambahDiAkhir(String nama, int level){
-        Node baru = new Node(nama, level);
+    // Append: tambah di akhir
+    public void tambahDiAkhir(Atribut player) {
+        NodeDouble baru = new NodeDouble(player);
+
         if (head == null) {
             head = baru;
             tail = baru;
@@ -33,15 +21,14 @@ class DoubleList{
 
         tail.next = baru;
         baru.prev = tail;
-
         tail = baru;
     }
 
-    //kali ini prepand
-    void tambahDiAwal(String nama, int level){
-        Node baru = new Node(nama, level);
+    // Prepend: tambah di awal
+    public void tambahDiAwal(Atribut player) {
+        NodeDouble baru = new NodeDouble(player);
 
-        if (head == null){
+        if (head == null) {
             head = baru;
             tail = baru;
             return;
@@ -49,18 +36,44 @@ class DoubleList{
 
         baru.next = head;
         head.prev = baru;
-
         head = baru;
     }
 
-    //transversal
-    void transversalMaju(){
-        Node current = head;
+    // Traversal maju
+    public void transversalMaju() {
+        NodeDouble current = head;
 
-        while (current != null){
-            System.out.println(current.nama + " - Lv." + current.level);
+        while (current != null) {
+            Atribut player = current.player;
+
+            System.out.println(
+                player.getName()
+                + " - Lv." + player.getLevel()
+                + " - HP: " + player.getHp()
+            );
+
             current = current.next;
         }
     }
 
+    // Traversal mundur
+    public void transversalMundur() {
+        NodeDouble current = tail;
+
+        while (current != null) {
+            Atribut player = current.player;
+
+            System.out.println(
+                player.getName()
+                + " - Lv." + player.getLevel()
+            );
+
+            current = current.prev;
+        }
+    }
+
+    // Memeriksa apakah list kosong
+    public boolean isEmpty() {
+        return head == null;
+    }
 }
