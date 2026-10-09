@@ -5,8 +5,9 @@ class Node{
     Node next;
     Node prev;
 
-    Node(String nama, int level){
+    Node(String nama, int hp, int level){
         this.nama = nama;
+        this.hp = hp;
         this.level = level;
         this.next = null;
         this.prev = null;
@@ -62,12 +63,4 @@ class DoubleList{
         }
     }
 
-    void transversalMundur(){
-        Node current = tail;
-
-        while (current != null){
-            System.out.println(current.nama + " - Lv." + current.level);
-            current = current.prev;
-        }
-    }
 }
