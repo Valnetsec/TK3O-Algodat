@@ -21,10 +21,10 @@ public class SingleEldergrove {
         while (checkNode != null) {
             System.out.println("Nama : " + checkNode.player.nama);
             System.out.println("Hp : " + checkNode.player.hp);
-            System.out.println("Level : " + checkNode.data.level);
-            System.out.println("Weapon : " + checkNode.data.weapon);
-            System.out.println("Element : " + checkNode.data.element);
-            System.out.println("Region : " + checkNode.data.region + "\n");
+            System.out.println("Level : " + checkNode.player.level);
+            System.out.println("Weapon : " + checkNode.player.weapon);
+            System.out.println("Element : " + checkNode.player.element);
+            System.out.println("Region : " + checkNode.player.region + "\n");
             checkNode = checkNode.next;
         }
     }
