@@ -15,6 +15,7 @@ public class RunGame{
             System.out.println("2. Tambah hero di belakang");
             System.out.println("3. Hapus hero");
             System.out.println("4. Tampilkan party");
+            System.out.println("5. Toko senjata");
             System.out.println("0. Keluar");
             System.out.print("Pilihan: ");
 
@@ -84,6 +85,13 @@ public class RunGame{
                     break;
                 }
 
+                case 5: {
+                    Circularlist circular = new Circularlist();
+                    circular.tampilkanMenu(input);
+                    break;
+
+                }
+                
                 case 0:
                     System.out.println("Keluar dari game...");
                     break;
@@ -92,7 +100,7 @@ public class RunGame{
                     System.out.println("Pilihan tidak valid!");
             }
 
-        } while (pilihan != 5);
+        } while (pilihan != 0);
 
         input.close();
     }
