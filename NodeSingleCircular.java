@@ -1,7 +1,7 @@
-public class Node {
+public class NodeSingleCircular {
     Role player;
-    Node next;
-    public Node (Role player){
+    NodeSingleCircular next;
+    public NodeSingleCircular (Role player){
         this.player = player;
         this.next = null;
     }
