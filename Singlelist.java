@@ -1,10 +1,10 @@
-public class SingleEldergrove {
-    Node head;
-    public SingleEldergrove (Doublelist reader){
+public class Singlelist {
+    NodeSingleCircular head;
+    public Singlelist (Doublelist reader){
         NodeDouble checkNode = reader.head;
         Node tail = null;
         while (checkNode != null) {
-            Node nodeBaru = new Node(checkNode.player);
+            NodeNodeSingleCircular nodeBaru = new Node(checkNode.player);
             if (head == null) {
                 head = nodeBaru; 
                 tail = nodeBaru;
@@ -16,7 +16,7 @@ public class SingleEldergrove {
         }    
     }
         public void showChar (){
-        Node checkNode = head;
+        NodeSingleCircular checkNode = head;
         while (checkNode != null) {
             System.out.println("Nama : " + checkNode.player.getName());
             System.out.println("Hp : " + checkNode.player.getHp());
