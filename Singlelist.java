@@ -2,9 +2,9 @@ public class Singlelist {
     NodeSingleCircular head;
     public Singlelist (Doublelist reader){
         NodeDouble checkNode = reader.head;
-        Node tail = null;
+        NodeSingleCircular tail = null;
         while (checkNode != null) {
-            NodeNodeSingleCircular nodeBaru = new Node(checkNode.player);
+            NodeSingleCircular nodeBaru = new NodeSingleCircular(checkNode.player);
             if (head == null) {
                 head = nodeBaru; 
                 tail = nodeBaru;
