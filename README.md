@@ -1,6 +1,9 @@
 # TK3O-Algodat
 
-A Java group project to practice Abstract Data Types (ADT), inheritance, and linked list implementations.
+# just hear me out
+- Character adalah superclass yang menyimpan atribut umum semua karakter.
+- Role adalah subclass yang mewarisi atribut dan method dari Character.
+- Atribut hero, bossfight, dan npc menjadi penanda kategori atau peran karakter.
 
 ### Planned Features
 - Character using a doubly linked list

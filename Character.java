@@ -18,19 +18,19 @@ public class Character {
     public int getLevel(){
         return level;
     }
-    public String getweapon(){
+    public String getWeapon(){
         return weapon;
     }
     public void setName(String name){
         this.name = name;
     }
-    public void setHP(int hp){
+    public void setHp(int hp){
         this.hp = hp;
     }
     public void setLevel(int level){
         this.level = level;
     }
-    public void setweapon(String weapon){
+    public void setWeapon(String weapon){
         this.weapon = weapon;
     }
 
