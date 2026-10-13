@@ -10,7 +10,7 @@ public class Doublelist {
     }
 
     // Append: tambah di akhir
-    public void tambahDiAkhir(Atribut player) {
+    public void tambahDiAkhir(Role player) {
         NodeDouble baru = new NodeDouble(player);
 
         if (head == null) {
@@ -25,7 +25,7 @@ public class Doublelist {
     }
 
     // Prepend: tambah di awal
-    public void tambahDiAwal(Atribut player) {
+    public void tambahDiAwal(Role player) {
         NodeDouble baru = new NodeDouble(player);
 
         if (head == null) {
@@ -44,13 +44,9 @@ public class Doublelist {
         NodeDouble current = head;
 
         while (current != null) {
-            Atribut player = current.player;
+            Role player = current.player;
 
-            System.out.println(
-                player.getName()
-                + " - Lv." + player.getLevel()
-                + " - HP: " + player.getHp()
-            );
+            System.out.println(player.getName() + " - Lv." + player.getLevel() + " - HP: " + player.getHp());
 
             current = current.next;
         }
@@ -61,12 +57,9 @@ public class Doublelist {
         NodeDouble current = tail;
 
         while (current != null) {
-            Atribut player = current.player;
+            Role player = current.player;
 
-            System.out.println(
-                player.getName()
-                + " - Lv." + player.getLevel()
-            );
+            System.out.println(player.getName() + " - Lv." + player.getLevel());
 
             current = current.prev;
         }

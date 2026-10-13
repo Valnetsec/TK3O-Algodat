@@ -1,9 +1,9 @@
 public class NodeDouble {
-    Atribut player;
+    Role player;
     NodeDouble next;
     NodeDouble prev;
 
-    public NodeDouble(Atribut player) {
+    public NodeDouble(Role player) {
         this.player = player;
         this.next = null;
         this.prev = null;
