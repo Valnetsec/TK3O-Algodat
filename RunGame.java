@@ -1,55 +1,99 @@
 
-// import java.util.Scanner;
+import java.util.Scanner;
 
-// public class Main {
-//     public static void main(String[] args) {
-//         Scanner input = new Scanner(System.in);
+public class RunGame{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Doublelist party = new Doublelist();
 
-//         // Membuat list karakter
-//         Doublelist daftarCharacter = new Doublelist();
+        int pilihan = 0;
 
-//         // Menambahkan data karakter
-//         daftarCharacter.tambahDiAkhir(
-//             new Atribut("Sword", "Pyro", "Mondstadt", "Diluc", 12000, 90)
-//         );
+        do {
+            System.out.println("\n========= PARTY MANAGEMENT =========");
+            System.out.println("Jumlah hero: " + party.getsize() + "/4");
+            System.out.println("1. Tambah hero di depan");
+            System.out.println("2. Tambah hero di belakang");
+            System.out.println("3. Hapus hero");
+            System.out.println("4. Tampilkan party");
+            System.out.println("0. Keluar");
+            System.out.print("Pilihan: ");
 
-//         daftarCharacter.tambahDiAkhir(
-//             new Atribut("Bow", "Cryo", "Mondstadt", "Diona", 8000, 80)
-//         );
+            pilihan = input.nextInt();
+            input.nextLine();
 
-//         daftarCharacter.tambahDiAkhir(
-//             new Atribut("Polearm", "Hydro", "Liyue", "Xiao", 10000, 90)
-//         );
+            switch (pilihan) {
 
-//         MaterialShop shop = new MaterialShop();
+                case 1: {
+                    if (party.sudahpenuh()){
+                        System.out.println("Party sudah penuh!");
+                        break;
+                    }
 
-//         System.out.println("\n=== TOWER BASE CARD GAME ===");
-//         System.out.println("1. Lihat Character");
-//         System.out.println("2. Lihat Senjata");
-//         System.out.println("3. Store");
-//         System.out.println("0. Exit");
+                    System.out.print("Nama hero: ");
+                    String nama = input.nextLine();
 
-//         System.out.print("Choose: ");
-//         int choice = input.nextInt();
+                    Role hero = new Role(                   //BAGIAN SINI UBAH AJ
+                        "Hero", "", "",
+                        nama, 100, 1, "Sword"
+                    );
 
-//         if (choice == 1) {
-//             System.out.println("\n=== CHARACTER ROSTER ===");
-//             daftarCharacter.transversalMaju();
+                    party.tambahDiAwal(hero);
+                    System.out.println("Hero ditambahkan di depan!");
+                    break;
+                }
 
-//         } else if (choice == 2) {
-//             System.out.println("\n=== SENJATA ===");
-//             daftarCharacter.transversalMaju();
+                case 2: {
+                    if (party.sudahpenuh()){
+                        System.out.println("Party sudah penuh!");
+                        break;
+                    }
 
-//         } else if (choice == 3) {
-//             shop.tampilkan();
+                    System.out.print("Nama hero: ");
+                    String nama = input.nextLine();
 
-//         } else if (choice == 0) {
-//             System.out.println("Keluar dari game...");
+                    Role hero = new Role(
+                        "Hero", "", "",
+                        nama, 100, 1, "Sword"
+                    );
 
-//         } else {
-//             System.out.println("Pilihan tidak valid!");
-//         }
+                    party.tambahDiAkhir(hero);
+                    System.out.println("Hero ditambahkan di belakang!");
+                    break;
+                }
 
-//         input.close();
-//     }
-// }
+                case 3: {
+                    if (party.isEmpty()){
+                        System.out.println("Party masih kosong!");
+                        break;
+                    }
+
+                    System.out.print("Nama hero yang dihapus: ");
+                    String name = input.nextLine();
+
+                    party.removehero(name);
+                    break;
+                }
+
+                case 4: {
+                    if (party.isEmpty()){
+                        System.out.println("Party masih kosong!");
+                    } else {
+                        System.out.println("\n=== URUTAN PARTY ===");
+                        party.transversalMaju();
+                    }
+                    break;
+                }
+
+                case 0:
+                    System.out.println("Keluar dari game...");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid!");
+            }
+
+        } while (pilihan != 5);
+
+        input.close();
+    }
+}
