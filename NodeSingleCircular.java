@@ -1,5 +1,4 @@
 public class NodeSingleCircular {
-    Hero player;
     String nama;
     String tipe;
     String level;
