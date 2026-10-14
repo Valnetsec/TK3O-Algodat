@@ -19,7 +19,7 @@ public class Doublelist{
     }
 
     // Append: tambah di akhir
-    public void tambahDiAkhir(Role player){
+    public void tambahDiAkhir(Hero player){
         if(sudahpenuh()){
             System.out.println("Tim hero sudah penuh, tidak bisa menambahkan hero baru.");
             return;
@@ -40,7 +40,7 @@ public class Doublelist{
     }
 
     // Prepend: tambah di awal
-    public void tambahDiAwal(Role player){
+    public void tambahDiAwal(Hero player){
         if(sudahpenuh()){
             System.out.println("Tim hero sudah penuh, tidak bisa menambahkan hero baru.");
             return;
@@ -59,37 +59,6 @@ public class Doublelist{
         head = baru;
 
         size++;
-    }
-
-    // Traversal maju
-    public void transversalMaju(){
-        NodeDouble current = head;
-
-        while (current != null) {
-            Role player = current.player;
-
-            System.out.println(player.getName() + " - Lv. " + player.getLevel() + " - HP: " + player.getHp() + " - Weapon: " + player.getWeapon());
-
-            current = current.next;
-        }
-    }
-
-    // Traversal mundur
-    public void transversalMundur(){
-        NodeDouble current = tail;
-
-        while (current != null) {
-            Role player = current.player;
-
-            System.out.println(player.getName() + " - Lv. " + player.getLevel() + " - HP: " + player.getHp() + " - Weapon: " + player.getWeapon());
-
-            current = current.prev;
-        }
-    }
-
-    // Memeriksa apakah list kosong
-    public boolean isEmpty(){
-        return head == null;
     }
 
     //bagian remove

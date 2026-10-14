@@ -1,9 +1,9 @@
 public class NodeDouble {
-    Role player;
+    Hero player;
     NodeDouble next;
     NodeDouble prev;
 
-    public NodeDouble(Role player) {
+    public NodeDouble(Hero player) {
         this.player = player;
         this.next = null;
         this.prev = null;
