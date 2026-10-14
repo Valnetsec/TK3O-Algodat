@@ -1,8 +1,18 @@
 public class NodeSingleCircular {
     Hero player;
+    String nama;
+    String tipe;
+    String level;
     NodeSingleCircular next;
-    public NodeSingleCircular (Hero player){
-        this.player = player;
+
+    public NodeSingleCircular(
+        String nama,
+        String tipe,
+        String level
+    ) {
+        this.nama = nama;
+        this.tipe = tipe;
+        this.level = level;
         this.next = null;
     }
 }
