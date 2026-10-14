@@ -1,14 +1,16 @@
 public class Hero extends Character {
-    private String hero;
-    
-    public Hero (String hero, String name, int hp, int level, String weapon){
+    private String role;
+
+    public Hero(String role, String name, int hp, int level, String weapon) {
         super(name, hp, level, weapon);
-        this.hero = hero;
+        this.role = role;
     }
-    public String gethero(){
-        return hero;
+
+    public String getRole() {
+        return role;
     }
-    public void sethero(String hero){
-        this.hero = hero;
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
