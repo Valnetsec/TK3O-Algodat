@@ -64,7 +64,6 @@ public class Doublelist{
         return current;
     }
 
-    // Mencegah hero yang sama masuk dua kali
     private boolean heroSudahAda(Hero player){
         if (player == null) {
             return false;
@@ -136,9 +135,7 @@ public class Doublelist{
         }
 
         if (heroSudahAda(hero)) {
-            System.out.println(
-                "Hero " + hero.getName() + " sudah ada di party."
-            );
+            System.out.println("Hero " + hero.getName() + " sudah ada di party.");
             return null;
         }
 
@@ -166,9 +163,7 @@ public class Doublelist{
         }
 
         if (sudahpenuh()){
-            System.out.println(
-                "Tim hero sudah penuh, tidak bisa menambahkan hero baru."
-            );
+            System.out.println("Tim hero sudah penuh, tidak bisa menambahkan hero baru.");
             return;
         }
 
