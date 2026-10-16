@@ -6,6 +6,7 @@ public class RunGame {
         Scanner input = new Scanner(System.in);
         Doublelist party = new Doublelist();
         Circularlist circular = new Circularlist();
+        Singlelist bossFight = new Singlelist();
 
         int pilihan = 0;
 
@@ -29,7 +30,7 @@ public class RunGame {
                     do {
                         System.out.println("\n====== HERO MANAGEMENT ======");
                         
-                        System.out.println("Jumlah hero: " + party.getsize() + "/4");
+                        System.out.println("Jumlah hero: " + party.getSize() + "/4");
 
                         System.out.println("1. Lihat semua hero");
                         System.out.println("2. Atur party");
@@ -65,7 +66,7 @@ public class RunGame {
                                     switch (menuAtur){
 
                                         case 1: {
-                                            if (party.sudahpenuh()){
+                                            if (party.sudahPenuh()){
                                                 System.out.println("Party sudah penuh!");
                                                 break;
                                             }
@@ -85,7 +86,7 @@ public class RunGame {
                                         }
 
                                         case 2: {
-                                            if (party.sudahpenuh()){
+                                            if (party.sudahPenuh()){
                                                 System.out.println("Party sudah penuh!");
                                                 break;
                                             }
@@ -154,12 +155,11 @@ public class RunGame {
                 }
 
                 case 2:
-                    System.out.println("KAU ATUR JE LAH KAWAN");
+                    bossFight.showChar(input);
                     break;
 
                 case 3:
-                    circular.tampilkanMenu(input); //KAU ATUR JE LAH KAWAN
-                    break;
+                    circular.tampilkanMenu(input); 
 
                 case 0:
                     System.out.println("Keluar dari game...");
